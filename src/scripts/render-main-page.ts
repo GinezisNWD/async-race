@@ -1,4 +1,4 @@
-function renderMainPage(): void {
+function renderBasicPage(): void {
   const wrapper = document.createElement('div');
   wrapper.classList.add('wrapper');
 
@@ -20,4 +20,4 @@ function renderMainPage(): void {
   document.body.prepend(wrapper);
 }
 
-export default renderMainPage;
+export default renderBasicPage;
