@@ -67,6 +67,31 @@
     margin: 0 0 10px 0;
   }
 
+  &__traffic-lane {
+    position: relative;
+
+    &::before {
+      content: '';
+      position: absolute;
+      bottom: 20px;
+      left: 0;
+      width: 100%;
+      border-bottom: 1px dashed $text-color;
+    }
+
+    &::after {
+      content: '';
+      width: 30px;
+      height: 30px;
+      position: absolute;
+      bottom: 25px;
+      right: 40px;
+      background: url('../../assets/img/flag_9423.png');
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+  }
+
   &__car-name {
     color: gold;
   }
