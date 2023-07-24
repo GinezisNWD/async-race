@@ -25,10 +25,58 @@
   &__contols {
     display: flex;
     gap: 10px;
+    margin: 0 0 60px 0;
   }
 
   &__create-car-color,
   &__update-car-color {
     background-color: $grey-color;
+  }
+
+  &__garage {}
+}
+
+.garage {
+  color: $text-color;
+
+  &__title {
+    margin: 0 0 20px 0;
+    font-size: 24px;
+  }
+
+  &__page {
+    font-size: 18px;
+    margin: 0 0 10px 0;
+  }
+
+  &__counter {
+    padding: 0 0 0 10px;
+
+    &::before {
+      content: '(';
+    }
+
+    &::after {
+      content: ')';
+    }
+  }
+
+  &__settings {
+    display: flex;
+    gap: 10px;
+    margin: 0 0 10px 0;
+  }
+
+  &__car-name {
+    color: gold;
+  }
+
+  &__svg {
+    display: inline-block;
+
+    >svg {
+      width: 100px;
+      height: 70px;
+    }
   }
 }
