@@ -96,6 +96,7 @@ function createCar(elem: Car): Element {
 
 function renderCars(cars: Car[]): void {
   const garageRaceField = document.querySelector('.garage__race-field');
+  if (garageRaceField) garageRaceField.innerHTML = '';
   cars.forEach((elem) => {
     garageRaceField?.append(createCar(elem));
   });
@@ -148,4 +149,4 @@ function renderApp(): void {
   renderGarageFields(1);
 }
 
-export default renderApp;
+export { renderApp, renderGarageFields };
