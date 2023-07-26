@@ -6,14 +6,13 @@ interface Data {
 }
 
 async function postCar(data: Data): Promise<void> {
-  const responce = await await fetch(`http://localhost:3000/garage`, {
+  fetch(`http://localhost:3000/garage`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
     },
     body: JSON.stringify(data),
   });
-  console.log(responce);
 }
 
 function createCar(): void {
