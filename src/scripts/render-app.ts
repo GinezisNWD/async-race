@@ -74,7 +74,7 @@ function createCar(elem: Car): Element {
   carName.classList.add('garage__car-name');
   carName.innerHTML = elem.name;
   const selectBtn = document.createElement('button');
-  selectBtn.classList.add('garage__remove-btn', 'blue-btn');
+  selectBtn.classList.add('garage__select-btn', 'blue-btn');
   selectBtn.textContent = 'SELECT';
   const removetBtn = document.createElement('button');
   removetBtn.classList.add('garage__remove-btn', 'blue-btn');

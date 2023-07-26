@@ -20,6 +20,14 @@ function createCar(): void {
   const nameInput: HTMLInputElement | null = document.querySelector('.async-race__create-car-name');
   const colorInput: HTMLInputElement | null = document.querySelector('.async-race__create-car-color');
   if (!nameInput || !colorInput) return;
+  if (nameInput.value.length === 0) {
+    nameInput.classList.add('shake');
+    nameInput.addEventListener('animationend', () => {
+      nameInput.classList.remove('shake');
+    });
+    return;
+  }
+
   const carName = nameInput.value;
   const carColor = colorInput.value;
   const pageNumber = getCurrentPageNumber();
@@ -33,4 +41,4 @@ function createCar(): void {
   colorInput.value = '#ffffff';
 }
 
-export default createCar;
+export { createCar, Data };
