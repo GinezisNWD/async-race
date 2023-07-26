@@ -1,4 +1,5 @@
 import { renderGarageFields } from './render-app';
+import getCurrentPageNumber from './utils';
 
 interface Data {
   name: string;
@@ -18,11 +19,10 @@ async function postCar(data: Data): Promise<void> {
 function createCar(): void {
   const nameInput: HTMLInputElement | null = document.querySelector('.async-race__create-car-name');
   const colorInput: HTMLInputElement | null = document.querySelector('.async-race__create-car-color');
-  const currentPage = document.querySelector('.garage__page_counter');
-  if (!nameInput || !colorInput || !currentPage) return;
+  if (!nameInput || !colorInput) return;
   const carName = nameInput.value;
   const carColor = colorInput.value;
-  const pageNumber = Number(currentPage.textContent);
+  const pageNumber = getCurrentPageNumber();
   const data = {
     name: carName,
     color: carColor,

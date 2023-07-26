@@ -74,10 +74,10 @@ function createCar(elem: Car): Element {
   carName.classList.add('garage__car-name');
   carName.innerHTML = elem.name;
   const selectBtn = document.createElement('button');
-  selectBtn.classList.add('blue-btn');
+  selectBtn.classList.add('garage__remove-btn', 'blue-btn');
   selectBtn.textContent = 'SELECT';
   const removetBtn = document.createElement('button');
-  removetBtn.classList.add('blue-btn');
+  removetBtn.classList.add('garage__remove-btn', 'blue-btn');
   removetBtn.textContent = 'REMOVE';
   carSettings.append(selectBtn, removetBtn, carName);
 
@@ -104,8 +104,8 @@ function renderCars(cars: Car[]): void {
 
 async function renderGarageFields(page: number): Promise<void> {
   const test = await getCars(page);
-  const { cars, xTotalCount, totalPages } = test;
-  if (!xTotalCount || !totalPages) return;
+  const { cars, xTotalCount } = test; // totalPages
+  // if (!xTotalCount || !totalPages) return;
   const counter = document.querySelector('.garage__cars_counter');
   const currentPage = document.querySelector('.garage__page_counter');
   if (!counter || !currentPage) return;
