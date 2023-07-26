@@ -1,4 +1,4 @@
-import { Car } from './backend';
+import { Car } from './get-cars';
 
 async function getCar(id: number): Promise<Car> {
   const responce = await fetch(`http://localhost:3000/garage/${id}`, {

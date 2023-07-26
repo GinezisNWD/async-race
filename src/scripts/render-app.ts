@@ -1,4 +1,4 @@
-import { Car, getCars } from './backend';
+import { Car, getCars } from './get-cars';
 import svg from './carSvg';
 
 function createAppNavigation(app: Element): void {
@@ -64,7 +64,7 @@ function renderAppContols(app: Element): void {
   app?.append(controls);
 }
 
-function createCar(elem: Car): Element {
+function createCarHTMLElem(elem: Car): Element {
   const garageRow = document.createElement('div');
   garageRow.classList.add('garage__row');
   garageRow.dataset.id = `${elem.id}`;
@@ -98,7 +98,7 @@ function renderCars(cars: Car[]): void {
   const garageRaceField = document.querySelector('.garage__race-field');
   if (garageRaceField) garageRaceField.innerHTML = '';
   cars.forEach((elem) => {
-    garageRaceField?.append(createCar(elem));
+    garageRaceField?.append(createCarHTMLElem(elem));
   });
 }
 
