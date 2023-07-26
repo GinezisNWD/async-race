@@ -3,6 +3,7 @@ import { renderApp } from './render-app';
 import { createCar } from './create-car';
 import garageHandler from './garage-handler';
 import updateCar from './update-car';
+import generateCars from './generate-cars';
 
 export function init(): void {
   renderBasicPage();
@@ -16,4 +17,7 @@ export function init(): void {
 
   const garage = document.querySelector('.garage');
   if (garage) garage.addEventListener('click', garageHandler);
+
+  const generateCarsBtn = document.querySelector('.async-race__generate-cars-btn');
+  generateCarsBtn?.addEventListener('click', generateCars);
 }

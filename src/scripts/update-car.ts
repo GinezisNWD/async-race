@@ -31,8 +31,10 @@ async function updateCar(): Promise<void> {
     body: JSON.stringify(data),
   });
 
-  console.log(data, id);
   renderGarageFields(pageNumber);
+  updateCarNameInput.value = '';
+  updateCarColorInput.value = '#ffffff';
+  updateCarBtn.dataset.id = undefined;
 }
 
 export default updateCar;

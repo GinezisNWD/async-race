@@ -41,4 +41,4 @@ function createCar(): void {
   colorInput.value = '#ffffff';
 }
 
-export { createCar, Data };
+export { createCar, Data, postCar };
