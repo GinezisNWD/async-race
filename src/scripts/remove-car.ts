@@ -9,7 +9,6 @@ async function removeCar(elem: HTMLElement): Promise<void> {
   await fetch(`http://localhost:3000/garage/${id}`, {
     method: 'DELETE',
   });
-  console.log(id);
   renderGarageFields(pageNumber);
 }
 
