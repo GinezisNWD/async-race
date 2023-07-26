@@ -11,7 +11,7 @@ interface Test {
 }
 
 async function getCars(page: number = 1, limit: number = 7): Promise<Test> {
-  const res = await fetch(`http://localhost:3000/garage?_page${page}&_limit=${limit}`);
+  const res = await fetch(`http://localhost:3000/garage?_page=${page}&_limit=${limit}`);
   const cars: Car[] = await res.json();
   const xTotalCount = res.headers.get('X-Total-Count');
   let totalPages;
