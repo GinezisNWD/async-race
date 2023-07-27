@@ -14,3 +14,8 @@
   background-color: $blue-color;
   border-bottom: 4px solid rgb(49, 112, 196);
 }
+
+.green-btn._inactive {
+  background-color: $grey-color;
+  border-bottom: 4px solid rgb(59, 59, 59);
+}

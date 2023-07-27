@@ -104,6 +104,11 @@
       height: 70px;
     }
   }
+
+  &__pagination-conrols {
+    display: flex;
+    gap: 10px;
+  }
 }
 
 

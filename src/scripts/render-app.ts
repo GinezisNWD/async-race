@@ -1,5 +1,6 @@
 import { Car, getCars } from './get-cars';
 import svg from './carSvg';
+import paginationIsAviable from './pagination-is-aviable';
 
 function createAppNavigation(app: Element): void {
   const nav = document.createElement('div');
@@ -104,8 +105,7 @@ function renderCars(cars: Car[]): void {
 
 async function renderGarageFields(page: number): Promise<void> {
   const test = await getCars(page);
-  const { cars, xTotalCount } = test; // totalPages
-  // if (!xTotalCount || !totalPages) return;
+  const { cars, xTotalCount, totalPages } = test;
   const counter = document.querySelector('.garage__cars_counter');
   const currentPage = document.querySelector('.garage__page_counter');
   if (!counter || !currentPage) return;
@@ -113,6 +113,7 @@ async function renderGarageFields(page: number): Promise<void> {
   currentPage.textContent = `${page}`;
 
   renderCars(cars);
+  paginationIsAviable(totalPages);
 }
 
 function createGarage(app: Element): void {
@@ -136,6 +137,20 @@ function createGarage(app: Element): void {
   garage.append(garageTitle, garagePage, garageRaceField);
   app.append(garage);
 }
+function renderPaginationControls(app: Element): void {
+  const paginationControls = document.createElement('div');
+  paginationControls.classList.add('garage__pagination-conrols');
+  const prevBtn = document.createElement('button');
+  prevBtn.classList.add('garage__pagination-prev-btn', 'green-btn', '_inactive');
+  prevBtn.textContent = 'PREV';
+
+  const nextBtn = document.createElement('button');
+  nextBtn.classList.add('garage__pagination-next-btn', 'green-btn', '_inactive');
+  nextBtn.textContent = 'NEXT';
+
+  paginationControls.append(prevBtn, nextBtn);
+  app.append(paginationControls);
+}
 
 function renderApp(): void {
   const mainContainer = document.querySelector('.main .container');
@@ -147,6 +162,7 @@ function renderApp(): void {
   createGarage(app);
   mainContainer?.append(app);
   renderGarageFields(1);
+  renderPaginationControls(app);
 }
 
 export { renderApp, renderGarageFields };
