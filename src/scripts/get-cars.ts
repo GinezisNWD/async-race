@@ -4,13 +4,13 @@ interface Car {
   name: string;
 }
 
-interface Test {
+interface Resp {
   xTotalCount: string | null;
   cars: Car[];
   totalPages: number | undefined;
 }
 
-async function getCars(page: number = 1, limit: number = 7): Promise<Test> {
+async function getCars(page: number = 1, limit: number = 7): Promise<Resp> {
   const res = await fetch(`http://localhost:3000/garage?_page=${page}&_limit=${limit}`);
   const cars: Car[] = await res.json();
   const xTotalCount = res.headers.get('X-Total-Count');
@@ -19,7 +19,7 @@ async function getCars(page: number = 1, limit: number = 7): Promise<Test> {
     totalPages = Math.ceil(Number(xTotalCount) / limit);
   }
 
-  const result: Test = {
+  const result: Resp = {
     xTotalCount,
     cars,
     totalPages,
@@ -27,4 +27,4 @@ async function getCars(page: number = 1, limit: number = 7): Promise<Test> {
   return result;
 }
 
-export { Car, Test, getCars };
+export { Car, Resp, getCars };

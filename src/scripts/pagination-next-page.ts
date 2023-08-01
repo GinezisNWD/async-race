@@ -5,9 +5,9 @@ function nextPage(event: Event): void {
   if (target.classList.contains('_inactive')) return;
   const currentPage = document.querySelector('.garage__page_counter');
   if (!currentPage) return;
-  const test2 = Number(currentPage?.textContent) + 1;
-  currentPage.textContent = `${test2}`;
-  renderGarageFields(test2);
+  const pageNumber = Number(currentPage?.textContent) + 1;
+  currentPage.textContent = `${pageNumber}`;
+  renderGarageFields(pageNumber);
 }
 
 function prevPage(event: Event): void {
@@ -15,9 +15,9 @@ function prevPage(event: Event): void {
   if (target.classList.contains('_inactive')) return;
   const currentPage = document.querySelector('.garage__page_counter');
   if (!currentPage) return;
-  const test2 = Number(currentPage?.textContent) - 1;
-  currentPage.textContent = `${test2}`;
-  renderGarageFields(test2);
+  const pageNumber = Number(currentPage?.textContent) - 1;
+  currentPage.textContent = `${pageNumber}`;
+  renderGarageFields(pageNumber);
 }
 
 export { nextPage, prevPage };

@@ -1,4 +1,4 @@
-import { Car, getCars } from './get-cars';
+import { Car, getCars, Resp } from './get-cars';
 import svg from './carSvg';
 import paginationIsAviable from './pagination-is-aviable';
 
@@ -104,8 +104,8 @@ function renderCars(cars: Car[]): void {
 }
 
 async function renderGarageFields(page: number): Promise<void> {
-  const test = await getCars(page);
-  const { cars, xTotalCount, totalPages } = test;
+  const resp: Resp = await getCars(page);
+  const { cars, xTotalCount, totalPages } = resp;
   const counter = document.querySelector('.garage__cars_counter');
   const currentPage = document.querySelector('.garage__page_counter');
   if (!counter || !currentPage) return;
