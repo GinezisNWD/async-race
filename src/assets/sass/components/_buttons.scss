@@ -1,0 +1,21 @@
+.green-btn,
+.blue-btn {
+  font-weight: bold;
+  padding: 3px 9px;
+  border-radius: 3px;
+}
+
+.green-btn {
+  background-color: $green-color;
+  border-bottom: 4px solid rgb(41, 184, 36);
+}
+
+.blue-btn {
+  background-color: $blue-color;
+  border-bottom: 4px solid rgb(49, 112, 196);
+}
+
+.green-btn._inactive {
+  background-color: $grey-color;
+  border-bottom: 4px solid rgb(59, 59, 59);
+}

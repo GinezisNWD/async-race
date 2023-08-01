@@ -1,0 +1,59 @@
+{
+  "env": {
+    "es6": true,
+    "browser": true,
+    "node": true
+  },
+  "plugins": [
+    "prettier",
+    "@typescript-eslint"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": 2020,
+    "sourceType": "module",
+    "project": "./tsconfig.json"
+  },
+  "extends": [
+    "airbnb-base",
+    "airbnb-typescript/base",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:prettier/recommended"
+  ],
+  "root": true,
+  "rules": {
+    "prettier/prettier": "error",
+    "no-debugger": "off",
+    "no-console": "off",
+    "class-methods-use-this": "off",
+    // для таски
+    "@typescript-eslint/no-explicit-any": 2,
+    "max-lines-per-function": [
+      "error",
+      40
+    ],
+    // Не обязательно
+    "import/prefer-default-export": "off",
+    "@typescript-eslint/array-type": [
+      "error",
+      {
+        "default": "array"
+      }
+    ],
+    "@typescript-eslint/explicit-member-accessibility": [
+      "error",
+      {
+        "accessibility": "explicit",
+        "overrides": {
+          "accessors": "explicit",
+          "constructors": "off",
+          "methods": "explicit",
+          "parameterProperties": "explicit"
+        }
+      }
+    ],
+    "@typescript-eslint/explicit-function-return-type": "error",
+    "@typescript-eslint/no-unnecessary-type-assertion": "error", // ? as
+    "@typescript-eslint/no-non-null-assertion": "error" // ? !
+  }
+}
